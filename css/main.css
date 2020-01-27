@@ -1,0 +1,23 @@
+*{
+	font-family: 'Roboto Condensed', sans-serif;
+}
+.slider{
+	background-image: url(../img/fond1.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+	background-position: center; 
+	color: #6A4242;
+}
+.footercolor{
+	background: rgba(0, 77, 112, 0.5);
+	height: 100vh;
+	width: 100%;
+}
+.texto-vertical{
+  width:20px;
+  height: 400px;
+  word-wrap: break-word;
+  text-align:center;
+}
+/*Fin fondo video*/
