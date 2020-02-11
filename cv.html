@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Sobre mi &mdash; Efrain Quiñonez</title>
+  <link rel="icon" type="image/ico" href="img/favicon.ico" />
+  <meta name="description" content="Página personal">
+  <meta name="keywords" content="HTML,CSS,JavaScript">
+  <meta name="author" content="Efrain Quiñonez">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://kit.fontawesome.com/be43ee7b4d.js" crossorigin="anonymous"></script>
+
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+
+  <div class="sidebar" id="sidebar">
+    <blockquote class="blockquote">
+      <p class="mb-0">EFRAIN QUIÑONEZ</p>
+      <footer class="blockquote-footer text-white">Diseñador Web</footer>
+    </blockquote>
+    <hr>
+    <ul>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="sobre-mi.html">SOBRE MÍ</a></li>
+      <li><a href="cv.html" class="now">CV</a></li>
+      <li><a href="#">PORTAFOLIO</a></li>
+      <li><a href="#">BLOG</a></li>
+    </ul>
+    <button class="menu" id="menu">
+      <i class="fas fa-times"></i>
+      <i class="fas fa-bars"></i>
+      
+    </button>
+  </div>
+
+  <div id="content" class="content">
+
+    <div class="container">
+      <div class="row">
+
+      </div>
+
+      <div class="row pt-4">
+        <div class="col-md-6">
+          <img src="img/perfil.png" class="img-fluid rounded" alt="Efrain Quiñonez Lopez">
+        </div>
+        <div class="col-md-6 pt-2">
+          <p class="des">
+            Desarrollé mi rol como programador web desde 2017 cuando termine de mi carrera técnica de 'Computación e Informática' por lo cual logré trabajar en varias empresas tecnológicas en Arequipa.
+        </p>
+        <p class="des">
+          Me gusta considerarme una persona muy colaborativa ya que a travez de la experiencia pude ver que los conocimientos impartidos en un centro de estudios son elementales pero no suficientes.Por eso no dudo en ayudar a algún compañero en problemas.
+        </p>
+        <p class="des">
+          Me apasiona el Baloncesto por lo cual lo practico casi diariamente todas las mañanas y me ayuda a sobrellevar el tiempo que estoy en algún proyecto que este realizando.
+        </p>
+        <p class="des">
+          Creo en el poder de la tecnología y la educación para transformar y mejorar nuestras vidas.Me gusta diseñar y crear nuevas herramientas que hagan más rápida y eficaz mis actividades.
+        </p>
+        
+        </div>
+      </div>
+    </div>
+    
+
+
+  </div>
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    const menuBtn = document.getElementById('menu');
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      content.classList.toggle('active');
+    });
+
+  </script>
+
+</body>
+
+</html>
