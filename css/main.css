@@ -128,7 +128,9 @@ hr {
 	background-color: #fff;
 	border-top: 2px dashed #8c8b8b;
 }
-
+footer a{
+	color:#000;
+}
 footer a:hover{
 	color: #fff;
 }
@@ -138,4 +140,18 @@ footer a:hover{
 }
 .now{
 	border-bottom: 3px solid #fff;
+}
+mark{
+	border-radius: 5%;
+	background-color: #bbe1fa;
+}
+.card{
+	box-shadow:  6px 6px 6px 0px rgba(0,0,0,0.75);
+}
+.card-body{
+	border-top: 5px dotted #fff;
+	background-color: #000;
+}
+.card-text{
+	color: #fff;
 }
