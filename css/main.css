@@ -146,12 +146,18 @@ mark{
 	background-color: #bbe1fa;
 }
 .card{
+	overflow: hidden;
+	border-radius: 20px;
 	box-shadow:  6px 6px 6px 0px rgba(0,0,0,0.75);
 }
+
 .card-body{
-	border-top: 5px dotted #fff;
-	background-color: #000;
+	transition:background-color .5s ease-in-out;
 }
-.card-text{
+.card-body{
+	background-color: #fff;
+}
+.card a:hover+.card-body{
 	color: #fff;
+	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxKR5UGqILMXo_um7YXa3af3B6jOhqbrmoLVAcb_yDGqbzjE-Q);
 }
