@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laboratorio de robotica v1</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body> 
+
+	<div id="sideNavigation" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="#">Bienvenida</a>
+		<a href="#">Sesión 01</a>
+		<a href="#">Sesión 02</a>
+		<a href="#">Sesión 03</a>
+		<a href="#">Sesión 04</a>
+	</div>
+	<a href="#" id="icon_menu" onclick="openNav()">
+		<svg width="30" height="30" id="icoOpen">
+				<path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+				<path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+				<path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+		</svg>
+	</a>
+	<div id="main">
+
+	</div>
+	<div class="controls">
+		<label for="obj1">Celeste: <text id="text_obj1" style="inline">0.0</text></label><br>
+		<input type="range" name="price" id="obj1" min="-3.0" max="3.0" step="0.001" value="0.0"><br>
+		
+		<label for="obj2">Rosa: <text id="text_obj2" style="inline">0.0</text></label><br>
+		<input type="range" name="price" id="obj2" min="-1.5" max="1.5" step="0.001" value="0.0"><br>
+		
+
+		<label for="obj1">Negro: <text id="text_obj3" style="inline">0.0</text></label><br>
+		<input type="range" name="price" id="obj3" min="-1.5" max="1.5" step="0.001" value="0.0">
+		
+	</div>
+	
+
+
+<script src="js/three.min.js"></script>
+<script src="js/OrbitControls.js"></script>
+<script src="js/dat.gui.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+	function openNav() {
+			document.getElementById("sideNavigation").style.width = "200px";
+			document.getElementById("main").style.marginLeft = "200px";
+			document.getElementById("controls").style.marginLeft = "200px";
+			
+	}
+	 
+	function closeNav() {
+			document.getElementById("sideNavigation").style.width = "0";
+			document.getElementById("main").style.marginLeft = "0";
+			document.getElementById("controls").style.marginLeft = "0";
+	}
+	</script>
+
+</body>
+
+</html>
