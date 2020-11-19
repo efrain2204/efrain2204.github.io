@@ -1,7 +1,7 @@
 
 var scene, renderer, camera;
 var controls;
-var arm, arm2, arm3, cy, esfera;
+var cub1;
 
 var gcontrols;
 var celeste = 0, rosa = 0, rojo = 0;
@@ -23,15 +23,17 @@ function crear_cilindro(x, y, z, r, color) {
 	const cylinder = new THREE.Mesh(geometry, material);
 	return cylinder;
 }
-function crear_esfera(r,x,y,color) {
+function crear_esfera(r, x, y, color) {
 	const geometry = new THREE.SphereGeometry(r, x, y);
-	const material = new THREE.MeshBasicMaterial({ color:color });
+	const material = new THREE.MeshBasicMaterial({ color: color });
 	const sphere = new THREE.Mesh(geometry, material);
 	return sphere;
 }
 function get_value_controls(name) {
 	return document.getElementById(name).value;
 }
+
+
 
 function init() {
 	var width = window.innerWidth;
@@ -53,25 +55,13 @@ function init() {
 	controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 	// Creando objetos
-	cy = crear_cilindro(10, 10, 100, 32, 0xeee222);
-	scene.add(cy);
-
-	arm = crear_cubos(60, 10, 10, 0x00ffff)
-	cy.add(arm);
-
-	arm2 = crear_cubos(60, 10, 10, 0xfa46d0);
-	arm.add(arm2);
-
-	arm3 = crear_cubos(60, 10, 10, 0x000000);
-	arm2.add(arm3);
-
-	esfera = crear_esfera(15,32,32,0x444222);
-	scene.add(esfera);
-
+	cub1 = crear_cubos(50, 20, 100, 0x000);
+	cub1.position.set(0, 15, 0);
+	scene.add(cub1);
 
 	//Agregar cuadricula base
 	var gridXZ = new THREE.GridHelper(200, 40);
-	gridXZ.setColors(new THREE.Color(0xff0000), new THREE.Color(0xffffff));
+	gridXZ.setColors(new THREE.Color(), new THREE.Color(0xffffff));
 	scene.add(gridXZ);
 
 	//Luz
@@ -108,15 +98,15 @@ function animate() {
 function update() {
 	controls.update();
 
-	//Controsl update
-	celeste = get_value_controls("obj1");
-	document.getElementById("text_obj1").innerHTML = celeste;
+	// //Controsl update
+	// celeste = get_value_controls("obj1");
+	// document.getElementById("text_obj1").innerHTML = celeste;
 
-	rosa = get_value_controls("obj2");
-	document.getElementById("text_obj2").innerHTML = rosa;
+	// rosa = get_value_controls("obj2");
+	// document.getElementById("text_obj2").innerHTML = rosa;
 
-	rojo = get_value_controls("obj3");
-	document.getElementById("text_obj3").innerHTML = rojo;
+	// rojo = get_value_controls("obj3");
+	// document.getElementById("text_obj3").innerHTML = rojo;
 	// celeste = gcontrols.celeste;
 	// rosa = gcontrols.rosa;
 	// rojo = gcontrols.rojo;
@@ -131,19 +121,38 @@ function onWindowResize() {
 
 
 function render() {
-	cy.position.set(-100, 50, 0);
-	esfera.position.set(0,15,0);
+	// cy.position.set(-100, 50, 0);
+	// esfera.position.set(0,15,0);
 
-	arm.rotation.y = celeste;
-	arm.position.set(30 * Math.cos(celeste), 30, -30 * Math.sin(celeste));
+	// arm.rotation.y = celeste;
+	// arm.position.set(30 * Math.cos(celeste), 30, -30 * Math.sin(celeste));
 
-	arm2.rotation.y = rosa;
-	arm2.position.set(30 + 30 * Math.cos(rosa), 0, -35 * Math.sin(rosa));
+	// arm2.rotation.y = rosa;
+	// arm2.position.set(30 + 30 * Math.cos(rosa), 0, -35 * Math.sin(rosa));
 
 
-	arm3.rotation.z = rojo;
-	arm3.position.set(30 + 30 * Math.cos(rojo), 30 * Math.sin(rojo), 0);
+	// arm3.rotation.z = rojo;
+	// arm3.position.set(30 + 30 * Math.cos(rojo), 30 * Math.sin(rojo), 0);
+	// movement - please calibrate these values
+	var xSpeed = 0.1;
+	var ySpeed = 0.1;
 
+	document.addEventListener("keydown", onDocumentKeyDown, false);
+	function onDocumentKeyDown(event) {
+		var keyCode = event.which;
+
+		if (keyCode == 87) {
+			cub1.position.z -= ySpeed;
+		} else if (keyCode == 83) {
+			cub1.position.z += ySpeed;
+		} else if (keyCode == 65) {
+			cub1.position.x -= xSpeed;
+		} else if (keyCode == 68) {
+			cub1.position.x += xSpeed;
+		} else if (keyCode == 32) {
+			cub1.position.set(0, 0, 0);
+		}
+	};
 
 
 	//Coordenadas
